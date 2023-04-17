@@ -1,0 +1,164 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyP5g6pCNwIu4UQaxFjDT+lE",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Tazmania2/teste/blob/master/Announcer\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "nWyrgLWjb57B",
+        "outputId": "59e1eb46-f56b-4117-f10b-65114e3f1748"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/\n",
+            "Collecting discord.py\n",
+            "  Downloading discord.py-2.2.2-py3-none-any.whl (1.1 MB)\n",
+            "\u001b[2K     \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m1.1/1.1 MB\u001b[0m \u001b[31m13.3 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[?25hCollecting aiohttp<4,>=3.7.4\n",
+            "  Downloading aiohttp-3.8.4-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.0 MB)\n",
+            "\u001b[2K     \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m1.0/1.0 MB\u001b[0m \u001b[31m20.3 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[?25hRequirement already satisfied: charset-normalizer<4.0,>=2.0 in /usr/local/lib/python3.9/dist-packages (from aiohttp<4,>=3.7.4->discord.py) (2.0.12)\n",
+            "Collecting async-timeout<5.0,>=4.0.0a3\n",
+            "  Downloading async_timeout-4.0.2-py3-none-any.whl (5.8 kB)\n",
+            "Collecting multidict<7.0,>=4.5\n",
+            "  Downloading multidict-6.0.4-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (114 kB)\n",
+            "\u001b[2K     \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m114.2/114.2 kB\u001b[0m \u001b[31m3.9 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[?25hCollecting yarl<2.0,>=1.0\n",
+            "  Downloading yarl-1.8.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (264 kB)\n",
+            "\u001b[2K     \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m264.6/264.6 kB\u001b[0m \u001b[31m8.0 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[?25hRequirement already satisfied: attrs>=17.3.0 in /usr/local/lib/python3.9/dist-packages (from aiohttp<4,>=3.7.4->discord.py) (22.2.0)\n",
+            "Collecting aiosignal>=1.1.2\n",
+            "  Downloading aiosignal-1.3.1-py3-none-any.whl (7.6 kB)\n",
+            "Collecting frozenlist>=1.1.1\n",
+            "  Downloading frozenlist-1.3.3-cp39-cp39-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (158 kB)\n",
+            "\u001b[2K     \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m158.8/158.8 kB\u001b[0m \u001b[31m8.6 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[?25hRequirement already satisfied: idna>=2.0 in /usr/local/lib/python3.9/dist-packages (from yarl<2.0,>=1.0->aiohttp<4,>=3.7.4->discord.py) (3.4)\n",
+            "Installing collected packages: multidict, frozenlist, async-timeout, yarl, aiosignal, aiohttp, discord.py\n",
+            "Successfully installed aiohttp-3.8.4 aiosignal-1.3.1 async-timeout-4.0.2 discord.py-2.2.2 frozenlist-1.3.3 multidict-6.0.4 yarl-1.8.2\n",
+            "Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/\n",
+            "Collecting python-dotenv\n",
+            "  Downloading python_dotenv-1.0.0-py3-none-any.whl (19 kB)\n",
+            "Installing collected packages: python-dotenv\n",
+            "Successfully installed python-dotenv-1.0.0\n",
+            "Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/\n",
+            "Collecting gTTS\n",
+            "  Downloading gTTS-2.3.1-py3-none-any.whl (28 kB)\n",
+            "Requirement already satisfied: click<8.2,>=7.1 in /usr/local/lib/python3.9/dist-packages (from gTTS) (8.1.3)\n",
+            "Requirement already satisfied: requests<3,>=2.27 in /usr/local/lib/python3.9/dist-packages (from gTTS) (2.27.1)\n",
+            "Requirement already satisfied: idna<4,>=2.5 in /usr/local/lib/python3.9/dist-packages (from requests<3,>=2.27->gTTS) (3.4)\n",
+            "Requirement already satisfied: certifi>=2017.4.17 in /usr/local/lib/python3.9/dist-packages (from requests<3,>=2.27->gTTS) (2022.12.7)\n",
+            "Requirement already satisfied: urllib3<1.27,>=1.21.1 in /usr/local/lib/python3.9/dist-packages (from requests<3,>=2.27->gTTS) (1.26.15)\n",
+            "Requirement already satisfied: charset-normalizer~=2.0.0 in /usr/local/lib/python3.9/dist-packages (from requests<3,>=2.27->gTTS) (2.0.12)\n",
+            "Installing collected packages: gTTS\n",
+            "Successfully installed gTTS-2.3.1\n",
+            "Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/\n",
+            "Collecting pynacl\n",
+            "  Downloading PyNaCl-1.5.0-cp36-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl (856 kB)\n",
+            "\u001b[2K     \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m856.7/856.7 kB\u001b[0m \u001b[31m13.9 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[?25hRequirement already satisfied: cffi>=1.4.1 in /usr/local/lib/python3.9/dist-packages (from pynacl) (1.15.1)\n",
+            "Requirement already satisfied: pycparser in /usr/local/lib/python3.9/dist-packages (from cffi>=1.4.1->pynacl) (2.21)\n",
+            "Installing collected packages: pynacl\n",
+            "Successfully installed pynacl-1.5.0\n"
+          ]
+        }
+      ],
+      "source": [
+        "!pip install discord.py \n",
+        "!pip install python-dotenv \n",
+        "!pip install gTTS\n",
+        "!pip install pynacl\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!echo \"DISCORD_BOT_TOKEN=MTA5NzM3MDMwNjkxMTQyMDU5Nw.GuAxGF.fmEeILH7Qze9FFR1zhjqj-WuxY_M61HzP3WbHo\" > .env"
+      ],
+      "metadata": {
+        "id": "8li857oDcAUH"
+      },
+      "execution_count": 17,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import discord\n",
+        "from discord.ext import commands\n",
+        "import os\n",
+        "import gtts\n",
+        "import asyncio\n",
+        "import nest_asyncio\n",
+        "\n",
+        "# Load the bot token from the .env file\n",
+        "from dotenv import load_dotenv\n",
+        "load_dotenv()\n",
+        "TOKEN = \"MTA5NzM3MDMwNjkxMTQyMDU5Nw.GuAxGF.fmEeILH7Qze9FFR1zhjqj-WuxY_M61HzP3WbHo\"\n",
+        "\n",
+        "# Define intents for the bot\n",
+        "intents = discord.Intents.all()  # Use intents.all() to enable all intents\n",
+        "# Initialize Discord client with intents\n",
+        "client = commands.Bot(command_prefix='!', intents=intents)\n",
+        "\n",
+        "# Event to detect when a user joins a voice channel\n",
+        "@client.event\n",
+        "async def on_voice_state_update(member, before, after):\n",
+        "    if before.channel is None and after.channel is not None:\n",
+        "        if member.guild.voice_client is not None:  # Check if bot is already connected to a voice channel\n",
+        "            return  # Return early if bot is already connected\n",
+        "        if member == client.user:  # Skip if the bot itself is joining\n",
+        "            return\n",
+        "        # Generate TTS announcement with user's name\n",
+        "        announcement = gtts.gTTS(f'{member.name} has joined the voice channel')\n",
+        "        announcement.save('announcement.mp3')\n",
+        "        # Join the voice channel and play the announcement\n",
+        "        voice_channel = await after.channel.connect()\n",
+        "        voice_channel.play(discord.FFmpegPCMAudio('announcement.mp3'))\n",
+        "        await asyncio.sleep(5)\n",
+        "        await voice_channel.disconnect()\n",
+        "\n",
+        "if __name__ == '__main__':\n",
+        "    # Use nest_asyncio to run the event loop\n",
+        "    nest_asyncio.apply()\n",
+        "    loop = asyncio.get_event_loop()\n",
+        "    loop.run_until_complete(client.start(TOKEN))\n"
+      ],
+      "metadata": {
+        "id": "RQg7qHcacN3g"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
